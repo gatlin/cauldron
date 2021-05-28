@@ -1,3 +1,13 @@
+cauldron
+===
+
+this is a nestjs based operational transform service for arbitrary json data,
+using my library [otis][otislink].
+
+[otislink]: https://github.com/gatlin/otis
+
+below is the nestjs readme, because it's useful.
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
