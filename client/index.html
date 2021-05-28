@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <script src="socket.io.js"></script>
+    <script type="module">
+      const socket = io("http://localhost:3000");
+     const sender_id = `sender-${Date.now().toString()}`;
+      socket.on("connect", () => {
+        socket.on("broadcast", data => {
+          console.log("[broadcast]", data);
+        });
+          socket.emit("submit-edit", {
+              operation: JSON.stringify({
+                  tag: "Splice",
+                  args: {
+                      pos: 3,
+                      old_value: "!",
+                      new_value: ""
+                  }
+              }),
+              document_id: "doc-id",
+              base_revision: 3,
+              sender_id
+          }, reply => {
+          console.log("[submit-edit] reply", reply);
+        });
+          socket.emit("load-initial", {
+              document_id: `doc-${Date.now().toString()}`
+          } , reply => {
+          console.log("reply", reply);
+        });
+      });
+    </script>
+  </body>
+</html>
