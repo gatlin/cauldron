@@ -6,7 +6,20 @@ using my library [otis][otislink].
 
 [otislink]: https://github.com/gatlin/otis
 
-below is the nestjs readme, because it's useful.
+**ONE SMALL THING TO RUN THIS**: I have not yet mastered the art or science of
+self-hosting my own node modules off github.
+
+if you want this to build, first
+
+```shell
+$> cd node_modules/otis
+$> npm i && npm run build
+```
+
+this will build the [otis][otislink] dependency which I can't seem to make
+happen automatically.
+
+below is the nestjs readme for everything else.
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
